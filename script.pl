@@ -10,9 +10,9 @@ my $dbh = DBI->connect("DBI:mysql:database=test;host=localhost","nobody", "nobod
 
 $dbh->{mysql_enable_utf8} = 1;
 
-my $text1 = "道後";
+my $text1 = "道後"; # => 内部表現
 $dbh->do(q[INSERT INTO test_dbd(text) VALUES (?)], undef,$text1);
-my $text2 = encode_utf8 "草津";
+my $text2 = encode_utf8 "草津"; # => バイト列
 $dbh->do(q[INSERT INTO test_dbd(text) VALUES (?)], undef,$text2);
 
 # Disconnect from the database.
