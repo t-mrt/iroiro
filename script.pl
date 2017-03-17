@@ -5,7 +5,6 @@ use utf8;
 use Encode qw(decode_utf8 encode_utf8);
 use DBI;
 
-# Connect to the database.
 my $dbh = DBI->connect("DBI:mysql:database=test;host=localhost","nobody", "nobody");
 
 $dbh->{mysql_enable_utf8} = 1;
